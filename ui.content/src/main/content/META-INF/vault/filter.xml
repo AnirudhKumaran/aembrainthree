@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/conf/orchard" mode="merge"/>
-    <filter root="/content/orchard" mode="merge"/>
-    <filter root="/content/dam/orchard" mode="merge"/>
+    <filter root="/conf/orchard" />
+    <filter root="/content/orchard" />
+    <filter root="/content/dam/orchard" />
 </workspaceFilter>

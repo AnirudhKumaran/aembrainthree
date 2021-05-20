@@ -73,11 +73,21 @@ public class DemoServiceAImpl implements DemoService {
 
     @Override
     public Iterator<Page>  getPages(){
+    	LOG.info("hey i am from service A");
         try {
             ResourceResolver resourceResolver= ResolverUtil.newResolver(resourceResolverFactory);
             PageManager pageManager=resourceResolver.adaptTo(PageManager.class);
             Page page=pageManager.getPage("/content/orchard/en");
             Iterator<Page> pages=page.listChildren();
+            String subText = "";
+            while (pages.hasNext()) {
+            	String pageTitle = pages.next().getTitle();
+                String pageName = pages.next().getName();
+                //String pageLastModified = pages.next().getLastModified().getInstance().toString();
+                //LOG.info(pageTitle+" > "+pageName+" > "+pageLastModified+"\n");
+                subText += (pageTitle+" > "+pageName+"\n");
+            }
+            LOG.info("Processed : "+subText);
             return pages;
         } catch (LoginException e) {
             LOG.info("\n Login Exception {} ",e.getMessage());

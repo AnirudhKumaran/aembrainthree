@@ -89,6 +89,9 @@ public class AuthorImpl implements Author{
     @ValueMapValue
     private List<String> books;
 
+    @ValueMapValue
+    @Default(values = "c")
+    private String selitem;
 
     @Override
     public List<String> getBooks() {
@@ -158,4 +161,8 @@ public class AuthorImpl implements Author{
         return bookDetailsMap;
     }
 
+    public String getSelectedValue() {
+    	return selitem;
+    }
+    
 }

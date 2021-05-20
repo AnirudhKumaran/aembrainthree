@@ -33,12 +33,13 @@ public class DemoServiceBImpl implements DemoServiceB {
     @Override
     public List<String> getPages(){
         List<String> listPages = new ArrayList<String>();
-
+        LOG.info("hey i am from service B");
         try {
             Iterator<Page> pages=demoService.getPages();
             while (pages.hasNext()) {
                 listPages.add(pages.next().getTitle());
             }
+            
             return listPages;
         } catch (Exception e) {
             LOG.info("\n  Exception {} ",e.getMessage());

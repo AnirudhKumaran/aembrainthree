@@ -142,6 +142,18 @@
                     <version>3.0.0</version>
                 </plugin>
                 <!-- BND Maven Plugin -->
+                    <plugin>
+				      <groupId>biz.aQute.bnd</groupId>
+				      <artifactId>bnd-maven-plugin</artifactId>
+				      <version>4.0.0</version>
+				      <executions>
+				        <execution>
+				          <goals>
+				            <goal>bnd-process</goal>
+				          </goals>
+				        </execution>
+				      </executions>
+				    </plugin>
                 <plugin>
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-maven-plugin</artifactId>
@@ -515,6 +527,12 @@
 			    <groupId>javax.servlet</groupId>
 			    <artifactId>servlet-api</artifactId>
 			    <version>3.0-alpha-1</version>
+			    <scope>provided</scope>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.sling</groupId>
+			    <artifactId>org.apache.sling.servlets.annotations</artifactId>
+			    <version>1.2.4</version>
 			    <scope>provided</scope>
 			</dependency>
             <dependency>

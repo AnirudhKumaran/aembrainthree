@@ -8,6 +8,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,11 +19,10 @@ import java.io.IOException;
 import java.util.List;
 
 @Component(service = Servlet.class)
-@SlingServlet
 @SlingServletResourceTypes(
         methods = {HttpConstants.METHOD_GET,HttpConstants.METHOD_POST},
         resourceTypes = "orchard/components/structure/page",
-        selectors = {"geeks","test"},
+        selectors = {"orchard","test"},
         extensions = {"txt","xml"}
 )
 public class GeeksResourceTypesServlet extends SlingAllMethodsServlet {
@@ -31,10 +31,13 @@ public class GeeksResourceTypesServlet extends SlingAllMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest req,
                          final SlingHttpServletResponse resp) throws ServletException, IOException {
-        final Resource resource = req.getResource();
+        String requestText = req.getParameter("cid");
+    	final Resource resource = req.getResource();
         resp.setContentType("text/plain");
         resp.getWriter().write("Page Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
+        resp.getWriter().write("Hello World " + requestText==null?"":requestText);
     }
+    
     @Override
     protected void doPost(SlingHttpServletRequest req, SlingHttpServletResponse resp)
             throws ServletException, IOException {
