@@ -171,6 +171,10 @@ Bundle-DocURL:
             <scope>test</scope>
         </dependency>
         <dependency>
+		<groupId>com.adobe.acs</groupId>
+		<artifactId>acs-aem-commons-bundle</artifactId>
+		</dependency>
+        <dependency>
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
         </dependency>
