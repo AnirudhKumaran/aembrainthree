@@ -1,0 +1,10 @@
+<h1>Candidate OSGi</h1>
+<div data-sly-use.osgiconfig="com.adobe.aem.guides.orchard.core.models.OSGiConfigTest"></div>
+
+<div><p> Candidate Name : <b>${osgiconfig.candidateName}</b></p></div>
+<div><p> Candidate Interested : <b>${osgiconfig.candidateInterested}</b></p></div>
+<div><p> Gender : <b>${osgiconfig.gender}</b></p></div>
+<div><b> Skills : </b></div>
+<ul data-sly-list="${osgiconfig.skills}">
+    <li>${item}</li>
+</ul>

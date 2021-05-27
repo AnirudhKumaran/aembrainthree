@@ -1,0 +1,20 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+	<sly data-sly-call="${clientlib.all @ categories='aemgeeks.page'}" />
+	<h1 id="test5">Programming Language Assignment</h1>
+</sly>
+<div data-sly-use.assigntest="${'com.adobe.aem.guides.orchard.core.models.Assignment'}"></div>
+
+    <div id="test3">Is Professor:  ${assigntest.loveCoding}  </div>
+    <div id="test4">Language Selected :  ${assigntest.selectedLanguage}  </div>
+
+    <div>Languages : ${assigntest.languages @ join=', '}</div>
+
+    <!-- <form method="POST" action="/content/orchard/en/englishsubpage/_jcr_content.orchard.txt"> -->
+	<!-- <form method="POST" action="/bin/pages"> -->
+    <!-- <form method="POST" action="/geeks/r5servlet"> -->
+	<form method="POST" action="/content/orchard/en/englishsubpage/_jcr_content.geeks.txt">
+    	<input type="text" name="fname" />
+        <input type="text" name="lname" />
+        <input type="submit" value="Submit" />
+
+    </form>
