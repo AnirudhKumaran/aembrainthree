@@ -44,7 +44,7 @@ public class ExecuteWorkflow extends SlingSafeMethodsServlet {
         String payload=req.getRequestParameter("page").getString();
         try {
             if(StringUtils.isNotBlank(payload)) {
-
+            	LOG.info("\n into the conditional block ");
                 WorkflowSession workflowSession = resourceResolver.adaptTo(WorkflowSession.class);
 
                 WorkflowModel workflowModel = workflowSession.getModel("/var/workflow/models/geeks-page-version");
@@ -56,6 +56,7 @@ public class ExecuteWorkflow extends SlingSafeMethodsServlet {
 
         } catch (Exception e) {
             LOG.info("\n ERROR IN WORKFLOW {} ", e.getMessage());
+            
         }
         resp.setContentType("application/json");
         resp.getWriter().write(status);
