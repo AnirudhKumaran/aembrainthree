@@ -52,6 +52,7 @@ public class SimpleServlet extends SlingSafeMethodsServlet {
         final Resource resource = req.getResource();
         resp.setContentType("text/plain");
         resp.getWriter().write("Servlet started");
+        resp.getWriter().write("Servlet executed");
         resp.getWriter().write("Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
         resp.getWriter().write("Servlet finished");
     }
