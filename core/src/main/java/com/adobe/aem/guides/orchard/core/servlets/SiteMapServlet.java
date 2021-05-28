@@ -48,6 +48,7 @@ public class SiteMapServlet extends SlingAllMethodsServlet {
             }
         }catch (Exception e){
             LOG.info("\n ERROR IN REQUEST {} ",e.getMessage());
+            LOG.info("\n ERROR IN REQUEST {} ",e.getMessage());
         }
         resp.getWriter().write("======FORM SUBMITTED========");
 
