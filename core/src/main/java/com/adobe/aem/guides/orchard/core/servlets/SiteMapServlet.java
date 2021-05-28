@@ -42,6 +42,7 @@ public class SiteMapServlet extends SlingAllMethodsServlet {
             throws ServletException, IOException {
         try {
             LOG.info("\n ------------------------STARTED POST-------------------------");
+            LOG.info("\n ------------------------STARTED POST-------------------------");
             List<RequestParameter> requestParameterList=req.getRequestParameterList();
             for(RequestParameter requestParameter : requestParameterList){
                 LOG.info("\n ==PARAMETERS===>  {} : {} ",requestParameter.getName(),requestParameter.getString());
