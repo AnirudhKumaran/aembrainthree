@@ -34,8 +34,8 @@ public class SiteMapServlet extends SlingAllMethodsServlet {
         String requestText = req.getParameter("cid");
     	final Resource resource = req.getResource();
         resp.setContentType("text/plain");
+        resp.getWriter().write("coming soon");
         resp.getWriter().write("Page Title = " + resource.getValueMap().get(JcrConstants.JCR_TITLE));
-        resp.getWriter().write("Hello World " + requestText==null?"":requestText);
     }
     
     @Override
